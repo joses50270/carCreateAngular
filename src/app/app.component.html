@@ -1,0 +1,21 @@
+<html>
+
+<head>
+</head>
+
+<body>
+  <p>The car I created: {{carArray}}</p>
+  Color:
+  <input type="text" id="color" [(ngModel)]="color">
+  <br> Car Type:
+  <input type="text" id="cartype" [(ngModel)]="carType">
+  <br> Doors:
+  <input type="text" id="doors" [(ngModel)]="doors">
+  <br> MPG:
+  <input type="text" id="mpg" [(ngModel)]="mpg">
+  <br>
+  <button (click)="addCar()">Add Car</button>
+
+</body>
+
+</html>
