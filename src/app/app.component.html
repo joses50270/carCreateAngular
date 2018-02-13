@@ -4,18 +4,14 @@
 </head>
 
 <body>
-  <p>The car I created: {{carArray}}</p>
-  Color:
-  <input type="text" id="color" [(ngModel)]="color">
-  <br> Car Type:
-  <input type="text" id="cartype" [(ngModel)]="carType">
-  <br> Doors:
-  <input type="text" id="doors" [(ngModel)]="doors">
-  <br> MPG:
-  <input type="text" id="mpg" [(ngModel)]="mpg">
-  <br>
-  <button (click)="addCar()">Add Car</button>
-
+  <input type="text" placeholder="doors" [(ngModel)]="doors"><br>
+  <input type="text" placeholder="mpg" [(ngModel)]="mpg"><br>
+  <input type="text" placeholder="color" [(ngModel)]="colors"><br>
+  <input type="text" placeholder="model" [(ngModel)]="model"><br>
+  <button (click)="makeCar()">Create Car</button>
+  <p *ngFor="let carArray of carArrays">
+    <span>Your car has {{carArray.doors}} doors, it has {{carArray.mpg}} miles per gallon, your car's color is {{carArray.colors}} and the car's model is a {{carArray.model}}.</span>
+  </p>
 </body>
 
 </html>

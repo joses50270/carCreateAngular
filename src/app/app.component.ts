@@ -1,21 +1,32 @@
 import { Component } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { variable } from '@angular/compiler/src/output/output_ast';
+import * as Vehicle from './carClass';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  doors: any = '4';
-  mpg: any = '15';
-  carType: any = 'honda';
-  color: any = 'red';
-  carArray = [];
-  newCar = [] ;
-  addCar() {
-    this.newCar.push(this.doors, this.mpg, this.carType, this.color);
-    this.carArray.push(this.newCar);
-    console.log(this.carArray);
+  doors: any;
+  mpg: any;
+  colors: any;
+  model: any;
+  carObject: any;
+  carArrays = [];
+
+
+  makeCar() {
+    this.carObject = {
+      incomingDoors: this.doors,
+      incomingMpg: this.mpg,
+      incomingModel: this.model,
+      incomingColors: this.colors
+    };
+    const myNewVehicle = new Vehicle.Car(this.carObject);
+    this.carArrays.push(myNewVehicle);
   }
+
 }
